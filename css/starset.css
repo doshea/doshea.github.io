@@ -43,8 +43,6 @@ body {
 }
 
 #biker {
-  filter: brightness(0);
-  -webkit-filter: brightness(0);
   position: absolute;
   left: 50%;
   bottom: 100%
