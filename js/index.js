@@ -1,4 +1,13 @@
+function hide_modal(){
+  $('#modal-cover').fadeOut(4000);
+  oblivion.play();
+}
+
 $(document).ready(function(){
   var oblivion = $('#oblivion').get(0);
-  var oblivion_src = $('#oblivion source');
+
+  $('button').on('mousedown', function(){
+    hide_modal();
+  })
+
 })
