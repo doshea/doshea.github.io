@@ -1,10 +1,9 @@
 html {
-  height: 10000px;
+  
 }
 
 body {
   margin: 0;
-  overflow: hidden; /* hides scrollbars */
 }
 
 #world {
@@ -162,15 +161,28 @@ body {
 }*/
 
 #stars {
-  width: 400%;
-  height: 400%;
-  position: absolute;
-  top: -100%;
-  left: -100%;
+  width: 800%;
+  height: 300em;
+  position: fixed;
   z-index: 1;
+  top: -45em;
+  left: -300%;
+  -webkit-border-radius: 2000px;
+  -moz-border-radius: 2000px;
+  border-radius: 2000px;
+  overflow: hidden;
 }
 
-
+/*#star-center {
+  position: absolute;
+  z-index: 4;
+  background: red;
+  width: 3px;
+  height: 3px;
+  top: 50%;
+  left: 50%;
+}
+*/
 @keyframes rotating {
   from {
     transform: rotate(0deg);
@@ -180,11 +192,11 @@ body {
     -o-transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
+    transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
   }
 }
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -196,6 +208,30 @@ body {
     -o-transform: rotate(0deg);
   }
   to {
+    transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 240s linear infinite normal;
+  -moz-animation: rotating 240s linear infinite normal;
+  -ms-animation: rotating 240s linear infinite normal;
+  -o-animation: rotating 240s linear infinite normal;
+  animation: rotating 240s linear infinite normal;
+}
+
+@keyframes reversing {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
     transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -203,10 +239,44 @@ body {
     -o-transform: rotate(360deg);
   }
 }
-.rotating {
-  -webkit-animation: rotating 240s linear infinite;
-  -moz-animation: rotating 240s linear infinite;
-  -ms-animation: rotating 240s linear infinite;
-  -o-animation: rotating 240s linear infinite;
-  animation: rotating 240s linear infinite;
+@-webkit-keyframes reversing /* Safari and Chrome */ {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+.reversing {
+  -webkit-animation: reverse-rotating 240s linear infinite;
+  -moz-animation: reverse-rotating 240s linear infinite;
+  -ms-animation: reverse-rotating 240s linear infinite;
+  -o-animation: reverse-rotating 240s linear infinite;
+  animation: reverse-rotating 240s linear infinite;  
+}
+
+#sun {
+  width: 300%;
+  height: 200%;
+  position: fixed;
+  left: 90%;
+  top: 0;
+
+  background: -moz-linear-gradient(left,  rgba(229,229,229,0) 0%, rgba(254,255,204,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(229,229,229,0)), color-stop(100%,rgba(254,255,204,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(229,229,229,0) 0%,rgba(254,255,204,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(229,229,229,0) 0%,rgba(254,255,204,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(229,229,229,0) 0%,rgba(254,255,204,1) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(229,229,229,0) 0%,rgba(254,255,204,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#feffcc',GradientType=1 ); /* IE6-9 */
+
 }
