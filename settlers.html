@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Settlers of JS</title>
+    <meta content="Dylan O'Shea" name="author">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Settlers, Catan, boardgame">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <script type="text/javascript" src="main/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="settlers/js/underscore.min.js"></script>
+    <script type="text/javascript" src="settlers/js/Chart.js"></script>
+
+    <link href="settlers/css/settlers.css" rel="stylesheet" type="text/css">
+    <link href="settlers/css/overrides.css" rel="stylesheet" type="text/css">
+    <link href="settlers/css/empty.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="settlers/js/constants.js"></script>
+    <script type="text/javascript" src="settlers/js/helpers.js"></script>
+    <script type="text/javascript" src="settlers/js/classes.js"></script>
+    <script type="text/javascript" src="settlers/js/runtime.js"></script>
+
+  </head>
+  <body>
+    <div class='sidebar left'>
+      <h3>Players</h3>
+      <ul id='players'></ul>
+      <button class='setup' onclick="game.add_player()">Add Player</button>
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+
+    <!-- The lovely hex images were designed by Ryan Schenk (http://ryanschenk.com/2010/11/settlers-of-catan-tiles/) -->
+    <div id='board-pane'>
+      <div id='test=hex'></div>
+      <div id='board'>
+        <div id='robber-container'>
+          <img src='settlers/img/robber.png' id='robber'>
+          <img src='settlers/img/robber_shadow.png' id='robber-shadow'>
+        </div>
+
+      </div>
+    </div>
+    <div class='sidebar right'>
+      <div id='controls'>
+        <section class='subcontrol' id='setup'>
+          <h3>Setup</h3>
+          <ul>
+            <li>Add Players</li>
+            <li>Re-roll hexes</li>
+            <li>Re-roll probabilities</li>
+          </ul>
+          <table id='resource-yields'>
+            <thead>
+              <tr>
+                <th>Resource</th>
+                <th>Hexes</th>
+                <th>Dots</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <button onclick="game.populate_hexes()">Shuffle Hexes</button>
+          <button onclick="game.populate_probabilities()">Shuffle Probabilities</button>
+          <p>Once you're ready, just click...</p>
+          <button class='setup' id='finish-setup' onclick='game.finish_setup()'>Start the Game!</button>
+        </section>
+
+        <section class='subcontrol inactive' id='planting'>
+          <h3>Disembark</h3>
+          <p>You have arrived in the land of Catan and quickly construct preliminary settlements.</p>
+          <p>Each player may place a settlement and a road connected to their settlement, following turn order</p>
+          <p>Then, repeat the process in reverse turn order.</p>
+          
+          <p class='instructions'></p>
+
+          <button class='planting' id='finish-planting' onclick='game.finish_planting()'>Start the Game!</button>
+        </section>
+
+        <section class='subcontrol inactive' id='dice'>
+          <div class='die centered'>
+            <span>&#x2680;</span>
+          </div>
+          <div class='die centered'>
+            <span>&#x2685;</span>
+          </div>
+            <button onclick='dice.start_roll()'>Roll Dice</button>
+          <div id='roll-acceptance'>
+            <button onclick='game.finish_rolling()'>Sweet!</button>
+            <button onclick='game.finish_rolling()'>Awww...</button>
+          </div>
+        </section>
+        <section class='subcontrol inactive' id='building'>
+          <h3>Buying and Building</h3>
+        </section>
+      </div>
+
+      <div id='log'>
+        <ul id='log-msgs'>
+          <li class='log-msg'><b>Welcome to Settlers of JS</b></li>
+          <hr>
+        </ul>
+        <form>
+          <input type='text'></input>
+        </form>
+      </div>
+    </div>
+
+    <input type="range" id="board-rotation" min="-180" max="180" oninput='rotate_board()'>
+  </body>
+</html>

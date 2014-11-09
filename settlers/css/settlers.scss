@@ -1,0 +1,499 @@
+// SVGs made using http://svg-edit.googlecode.com/svn/branches/stable/editor/svg-editor.html
+// Font made using https://icomoon.io/app/
+
+$font-size: 16px;
+$font-conversion: 1em/$font-size;
+
+@font-face {
+  font-family: 'buildings';
+  src: url('../fonts/buildings.ttf') format('truetype');
+}
+
+@-webkit-keyframes blinker {
+  0% { -webkit-filter: brightness(100%); }
+  50% { -webkit-filter: brightness(600%); }
+  100% { -webkit-filter: brightness(100%); }
+}
+.blinky {
+  -webkit-animation: blinker 4s infinite;
+}
+
+#players {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.player {
+  position: relative;
+  border-bottom: 1px dashed black;
+  padding-left: 0.5em;
+  .name {
+    margin-left: 0.5em; 
+    font-weight: 500;
+  }
+  .flag {
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+
+  }
+  &.active {
+    border-style: solid;
+    border: black;
+    background: blanchedalmond;
+  }
+}
+.vp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0.25em 0.5em;
+  background: gold;
+}
+.resources {
+  width: 100%;
+
+  .card {
+    background: url('../img/profeasy/dev/card_back.png') no-repeat;
+  }
+}
+.card {
+  width: 2em;
+  height: 3em;
+  background-size: 100% !important;
+  display: inline-block;
+  margin-left: -1em;
+}
+.row {
+  font-size: small;
+  vertical-align: top;
+  height: 3.15em;
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  span {
+    font-size: inherit;
+    vertical-align: inherit;
+    margin-right: 1.25em;
+  }
+}
+.over-max {
+  span {
+    color: red;
+    font-weight: bold;
+    margin-right: 1.75em;
+  }
+  .card {
+    margin-left: -1.5em;
+  }
+}
+
+.army {
+  width: 100%;  
+  .card{
+    background: url('../img/profeasy/dev/knight.png') no-repeat;
+  }
+}
+
+.clickable, .plantable {
+  cursor: pointer;
+
+  &.building:hover {
+    -webkit-transform: scale(1.50);
+    -moz-transform: scale(1.50);
+    -o-transform: scale(1.50);
+    transform: scale(1.40);
+  }
+  
+}
+.centered {
+  text-align: center;
+}
+
+$hwo: 133px;
+$hho: 117px;
+$hscale: 1;
+$nhwo: $hwo * $hscale * $font-conversion;
+$nhho: $hho * $hscale * $font-conversion;
+
+$offset-multiplier: 0.84;
+$col-offset: $offset-multiplier * $nhwo;
+
+$pane-color: #6e9bcc;
+/* BOARD */
+#board-pane {
+  text-align: center;
+  padding: 1em 0 0 0;
+  // background: #ffffff;
+  // background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, $pane-color 100%);
+  // background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,$pane-color));
+  // background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,$pane-color 100%);
+  // background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,$pane-color 100%);
+  // background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,$pane-color 100%);
+  // background: radial-gradient(ellipse at center,  #ffffff 0%,$pane-color 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#6e9bcc',GradientType=1 );
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('http://www.zingerbug.com/Backgrounds/background_images/light_blue_painted_textured_wall_tileable.jpg');
+    background-repeat: repeat;
+    -webkit-filter: blur(3px);
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+  }
+
+}
+#board {
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  padding-bottom: 4em*$hscale;
+}
+
+
+
+.circle {
+  border-radius: 50%;
+}
+
+.probability {
+  text-align: center;
+  border: 1px solid black;
+  background: white;
+  position: absolute;
+  top: 30%;
+  left: 33%;
+  width: 44px * $font-conversion;
+  height: 44px * $font-conversion;
+
+  .roll {
+    padding-top: 0.25em*$hscale;
+  }
+  .dots {
+    padding-bottom: 0.25em*$hscale;
+  }
+}
+
+.hex-row {
+  margin-bottom: -0.45 * $nhho;
+  height: $nhho; 
+  text-align: left;
+
+  &:first-child, &:last-child {
+    margin-left: 3 * $col-offset;
+  }
+  &:nth-child(2), &:nth-last-child(2) {
+    margin-left: 2 * $col-offset;
+  }
+  &:nth-child(3), &:nth-child(5), &:nth-child(7), &:nth-last-child(5), &:nth-last-child(3) {
+    margin-left: 1 * $col-offset;
+  }
+}
+
+.hex {
+  width: $nhwo;
+  height: $nhho;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+  position: relative;
+  display: inline-block;
+  margin: 0 $nhwo/2.95;
+
+  &.sea {
+    background-image: url('../img/sea4.png');
+    visibility: hidden;
+  }
+  &.brick {
+    background-image: url('../img/brick4.png');
+  }
+  &.ore {
+    background-image: url('../img/ore4.png');
+  }
+  &.wood {
+    background-image: url('../img/wood4.png');
+  }
+  &.wheat {
+    background-image: url('../img/wheat4.png');
+  }
+  &.sheep {
+    background-image: url('../img/sheep4.png');
+  }
+  &.desert {
+    background-image: url('../img/desert4.png');
+  }
+}
+
+#robber-container {
+  position: absolute;
+  z-index: 10;
+  height: 4em*$hscale;
+  left: 25%;
+  top: -15%;
+  z-index: 10002;
+
+  img{
+    height: 100%;
+    position: absolute;
+  }
+}
+
+#robber {
+  z-index: 1001;
+}
+#robber-shadow {
+  -webkit-transform: translate(1.8em, 4.6em) rotate(150deg) scale(0.8,1.4);
+  -moz-transform: translate(1.8em, 4.6em) rotate(150deg) scale(0.8,1.4);
+  -o-transform: translate(1.8em, 4.6em) rotate(150deg) scale(0.8,1.4);
+  transform: translate(0.16*$nhwo, 0.42*$nhwo) rotate(150deg) scale(0.8,1.4);
+  opacity: 0.8;
+}
+
+$road-w: $nhwo/2;
+$road-h: $nhwo/15;
+
+$r1-4-rot: -60deg;
+$r1-4-hor: -18%;
+$r1-4-vert: 17.8%;
+$r2-5-left: 24.3%;
+$r2-5-vert: -10%;
+$r3-6-rot: -$r1-4-rot;
+$r3-6-hor: -$r1-4-hor;
+$r3-6-vert: -$r1-4-vert;
+
+.road {
+  position: absolute;
+  width: $road-w;
+  height: $road-h;
+  background: whitesmoke;
+  border: 1px solid #ccc;
+  z-index: 2;
+
+  &.pos-0 {
+    transform: rotate($r1-4-rot);
+    left: $r1-4-hor;
+    top: $r1-4-vert;
+  }
+  &.pos-1 {
+    left: $r2-5-left;
+    top: $r2-5-vert;
+  }
+  &.pos-2 {
+    transform: rotate($r3-6-rot);
+    right: $r1-4-hor;
+    top: $r1-4-vert;
+  }
+  &.pos-3 {
+    transform: rotate($r1-4-rot);
+    right: $r1-4-hor;
+    bottom: $r1-4-vert;
+  }
+  &.pos-4 {
+    left: $r2-5-left;
+    bottom: $r2-5-vert;
+  }
+  &.pos-5 {
+    transform: rotate($r3-6-rot);
+    left: $r1-4-hor;
+    bottom: $r1-4-vert;
+  }
+  &.owned {
+    border-color: black;
+  }
+}
+
+$b1-2-4-5-hor: $r2-5-left - 8.4%;
+$b1-2-4-5-vert: $r2-5-vert - 1.5%;
+$b3-6-hor: -11.5%;
+$b3-6-vert: 43.5%;
+
+.building {
+
+  background: whitesmoke;
+  border: 1px solid #ccc;
+  width: $road-h*1.5;
+  height: $road-h*1.5;
+  position: absolute;
+  z-index: 3;
+
+  &.pos-0 {
+    left: $b1-2-4-5-hor;
+    top: $b1-2-4-5-vert;
+  }
+  &.pos-1 {
+    right: $b1-2-4-5-hor;
+    top: $b1-2-4-5-vert;
+  }
+  &.pos-2 {
+    right: $b3-6-hor;
+    top: $b3-6-vert;
+  }
+  &.pos-3 {
+    right: $b1-2-4-5-hor;
+    bottom: $b1-2-4-5-vert;
+  }
+  &.pos-4 {
+    left: $b1-2-4-5-hor;
+    bottom: $b1-2-4-5-vert;
+  }
+  &.pos-5 {
+    left: $b3-6-hor;
+    top: $b3-6-vert;
+  }
+}
+.settlement, .city {
+  position: absolute;
+  top: -120%;
+  left: -80%;
+  font-family: 'buildings';
+  font-size: 2em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  -moz-box-shadow: 0 3px 0 black;
+  -ms-box-shadow: 0 3px 0 black;
+  -webkit-box-shadow: 0 3px 0 black;
+  box-shadow: 0 3px 0 black;
+}
+
+.settlement::after {
+    content: 's';
+  }
+.city::after {
+  content: 'c';
+}
+
+.road, .building {
+  visibility: visible;
+
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  -o-transition: -o-transform 0.3s;
+  transition: transform 0.3s;
+
+
+  &.unowned.clickable:hover, &.plantable:hover {
+    background: #333;
+  }
+}
+.plantable {
+  z-index: 1000;
+}
+
+.owned {
+  opacity: 1;
+  z-index: 1001;
+}
+
+$controls-h: 60%;
+
+.sidebar {
+  background: white;
+  position: fixed;  
+  top: 0;
+  height: 100%;
+  width: 14em;
+  h3 {
+    text-align: center;
+  }
+
+  #controls {
+    position: relative;
+    height: $controls-h;
+    min-height: 24em;
+  }
+  &.right {
+    right: 0;
+    border-left: 2px solid black;
+  }
+  &.left {
+    left: 0;
+    border-right: 2px solid black;
+    h3 {
+      background: #ddd;
+      margin: 0;
+      padding: 1em 0;
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+.subcontrol {
+  border-left: 2px solid black;
+  margin-left: -2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+
+  &.stack-1 {
+    z-index: 1;
+  }
+  &.stack-2 {
+    z-index: 1;
+  }
+  &.stack-3 {
+    z-index: 1;
+  }
+  &.stack-4 {
+    z-index: 1;
+  }
+  &.inactive {
+    left: 140%;
+  }
+}
+
+
+#dice {
+  button {
+    width: 80%;
+    font-weight: bold;
+    font-size: 1em;
+  }
+}
+.die {
+  display: inline-block;
+  span {
+    font-size: 10em;
+    line-height: 1em;
+  }
+}
+
+/* LOG */
+#log {
+  background: whitesmoke;
+  border-top: 2px solid black;
+  padding: 0 0.5em;
+  height: 100% - $controls-h;
+
+  input[type='text'] {
+    position: absolute;
+    bottom: 0.4em;
+    width: 96%;
+    left: 0.4em;
+  }
+}
+#log-msgs {
+  list-style-type: none;
+  font-size: smaller;
+  overflow: auto;
+  max-height: 19em;
+  width: inherit;
+  margin: 0.5em 0;
+  padding: 0; 
+}
