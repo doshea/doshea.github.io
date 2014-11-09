@@ -1,12 +1,46 @@
+* {
+  font-family: 'Raleway', arial, sans-serif;
+}
+
 body {
-  background: lightblue;
 }
 h1 {
-  margin: auto auto;
   text-align: center;
   color: white;
 }
 .heroku {
   height: 1em;
   vertical-align: middle;
+}
+.sec {
+  height: 120%;
+  min-height: 500px;
+}
+#sec-1 {
+  background-color: #434FDE;
+/*  background: url('http://subtlepatterns.com/patterns/congruent_pentagon.png' repeat)
+*/
+}
+#sec-1 h1 {
+  font-size: 5em;
+}
+#sec-3 {
+  /*background: url('../img/wood_table.jpg') no-repeat center center;*/
+  /*background-size: cover; */
+  /*background: url('http://subtlepatterns.com/images/transp_bg.png') repeat;*/
+  
+  background: url('http://images2.layoutsparks.com/1/161655/crossword-game-intelligence.jpg') repeat;
+  background-size: 60%;
+  -webkit-filter: blur(10px);
+}
+.vert-centered {
+  margin: auto; 
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  height: 8em;
+}
+.spacer {
+  height: 3em;
+  background: black;
+  width: 100%;
 }
