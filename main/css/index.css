@@ -30,8 +30,8 @@ h1 {
   /*background: url('http://subtlepatterns.com/images/transp_bg.png') repeat;*/
   
   background: url('http://images2.layoutsparks.com/1/161655/crossword-game-intelligence.jpg') repeat;
-  background-size: 60%;
-  -webkit-filter: blur(10px);
+  background-size: 20%;
+  -webkit-filter: blur(5px);
 }
 .vert-centered {
   margin: auto; 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meetup Member Heatmap</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <link rel="shortcut icon" href="http://www.meetup.com/favicon.ico" />
+    <link href="meetup_heatmap/css/meetup_heatmap.css" rel="stylesheet" type="text/css">
+
+    <!-- Vendor Scripts -->
+    <script type="text/javascript" src="main/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="meetup_heatmap/js/spin.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-th8duGa9BieaEGRE8qCzfEMrtSUCqXY&libraries=visualization&sensor=false"></script>
+    <!-- Site-specific script -->
+    <script type="text/javascript" src="meetup_heatmap/js/meetup_heatmap.js"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <form id='member-search'>
+        <input type='text' placeholder='Enter group name' autofocus=true></input>
+      </form>
+    </header>
+    <div id='container'>
+      <div id="map-canvas"></div>
+    </div>
+    <footer>
+      <span id='credit'>O'SheAriey 2012</span>
+    </footer>
+  </body>
+  
+</html>
