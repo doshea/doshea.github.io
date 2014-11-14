@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Starjhol;
+    src: url('../fonts/Starjhol.ttf');
+}
+
 * {
   font-family: 'Raleway', arial, sans-serif;
 }
@@ -6,23 +11,27 @@ body {
 }
 h1 {
   text-align: center;
-  color: white;
 }
 .heroku {
   height: 1em;
   vertical-align: middle;
 }
 .sec {
-  height: 120%;
+  height: 100%;
   min-height: 500px;
+  position: relative;
 }
 #sec-1 {
-  background-color: #434FDE;
-/*  background: url('http://subtlepatterns.com/patterns/congruent_pentagon.png' repeat)
-*/
+  /*background-color: #434FDE;*/
+  /*padding-top: 2em; */
+  /*background: url('http://subtlepatterns.com/patterns/congruent_pentagon.png') repeat;*/
+    background: url('http://subtlepatterns.com/patterns/carbon_fibre.png') repeat;
+
+
 }
 #sec-1 h1 {
   font-size: 5em;
+  color: white;
 }
 #sec-3 {
   /*background: url('../img/wood_table.jpg') no-repeat center center;*/
@@ -43,4 +52,63 @@ h1 {
   height: 3em;
   background: black;
   width: 100%;
+}
+
+.starwars {
+  font-family: Starjhol;
+  background: black;
+  color: gold;
+}
+
+
+
+/* Paper */
+.paper {
+  top: 4%;
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  padding: 0px 0.3125em 0.25em 0.375em;
+  position: relative;
+  color: #444;
+  line-height: 20px;
+  border: 1px solid #d2d2d2;
+  background: #fff;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+  background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: -o-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  background: linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+  -webkit-background-size: 100% 20px;
+  -moz-background-size: 100% 20px;
+  -ms-background-size: 100% 20px;
+  -o-background-size: 100% 20px;
+  background-size: 100% 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  /*width: 816px;*/
+  /*height: 1056px;*/
+  max-width: 30em;
+}
+ 
+.paper::before {
+  content: '';
+  position: absolute;
+  width: 0.25em;
+  top: 0;
+  left: 1.875em;
+  bottom: 0;
+  border: 1px solid;
+  border-color: transparent #efe4e4;
+}
+.paper .head {
+  background-color: #FFF;
+  min-height: 5em;
+  margin-left: -0.25em;
+  margin-top: 0.1em;
 }
