@@ -22,10 +22,8 @@ h1 {
   position: relative;
 }
 #sec-1 {
-  /*background-color: #434FDE;*/
-  /*padding-top: 2em; */
-  /*background: url('http://subtlepatterns.com/patterns/congruent_pentagon.png') repeat;*/
-    background: url('http://subtlepatterns.com/patterns/carbon_fibre.png') repeat;
+  /*background: url('http://subtlepatterns.com/patterns/carbon_fibre.png') repeat;*/
+  background: url('http://subtlepatterns.com/patterns/dark_wood.png') repeat;
 
 
 }
