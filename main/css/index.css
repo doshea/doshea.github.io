@@ -2,6 +2,10 @@
     font-family: Starjhol;
     src: url('../fonts/Starjhol.ttf');
 }
+@font-face {
+    font-family: Dylan;
+    src: url('../fonts/Dylan.otf');
+}
 
 * {
   font-family: 'Raleway', arial, sans-serif;
@@ -91,7 +95,8 @@ h1 {
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   /*width: 816px;*/
   /*height: 1056px;*/
-  max-width: 30em;
+  max-width: 40em;
+  font-family: Dylan;
 }
  
 .paper::before {
@@ -109,4 +114,27 @@ h1 {
   min-height: 5em;
   margin-left: -0.25em;
   margin-top: 0.1em;
+}
+.paper .title {
+  text-align: center;
+  margin-top: -0.4em;
+  line-height: 0.5em;
+  font-size: 3em;
+  margin-bottom: 0.35em;
+}
+.paper .title span {
+  font-size: 0.5em;
+}
+.paper p:not(.title) {
+  font-size: 2em;
+  margin-left: 1em;
+}
+#scroll-hint {
+  position: absolute;
+  bottom: 0.3em;
+  right: 0.3em;
+  cursor: pointer;
+}
+#scroll-hint:hover {
+  opacity: 0.7;
 }
