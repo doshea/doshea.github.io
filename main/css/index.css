@@ -24,6 +24,7 @@ h1 {
   height: 100%;
   min-height: 500px;
   position: relative;
+  overflow: hidden;
 }
 #sec-1 {
   /*background: url('http://subtlepatterns.com/patterns/carbon_fibre.png') repeat;*/
@@ -35,14 +36,11 @@ h1 {
   font-size: 5em;
   color: white;
 }
-#sec-3 {
-  /*background: url('../img/wood_table.jpg') no-repeat center center;*/
-  /*background-size: cover; */
-  /*background: url('http://subtlepatterns.com/images/transp_bg.png') repeat;*/
-  
+#sec-3 .background{
   background: url('http://images2.layoutsparks.com/1/161655/crossword-game-intelligence.jpg') repeat;
   background-size: 20%;
-  -webkit-filter: blur(5px);
+  -webkit-filter: blur(2px);
+  top: 0;
 }
 .vert-centered {
   margin: auto; 
@@ -137,4 +135,49 @@ h1 {
 }
 #scroll-hint:hover {
   opacity: 0.7;
+}
+
+.project-desc {
+  background: rgba(255,255,255,0.9);
+  max-width: 25em;
+  width: 25%;
+  min-height: 35em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  border: 1px solid black;
+  margin: 2em 0 0 5em;
+  display: inline-block;
+  overflow: hidden;
+}
+.project-desc img{
+  margin: 0 auto;
+  display: block;
+}
+.project-pic {
+  margin-top: 2em;
+  display: inline-block;
+  position: relative;
+  width: 40%;
+  height: 24.7%;
+}
+.project-pic a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+}
+.project-pic.crossword {
+  background: url('../img/crossword_preview1.jpg') no-repeat;
+  background-size: 100%;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  display: block;
+  min-width: 900px;
+}
+.icon {
 }
