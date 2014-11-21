@@ -149,9 +149,13 @@ h1 {
   overflow: hidden;
 
   .logo {
+    @include all-transitions(0.3s);
     background: black;
     padding: 0.5em 0;
     display: block;
+    &:hover {
+      background: #333;
+    }
   }
 }
 #crossword-cafe .background{
@@ -205,9 +209,9 @@ h1 {
     position: absolute;
     display: block;
     z-index: 1;
-    @include all-transitions(0.5s);
+    @include all-transitions(0.3s);
     &:hover {
-      background: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.2);
     }
   }
   &.crossword {

@@ -112,9 +112,15 @@ h1 {
   position: relative;
   overflow: hidden; }
   .project .logo {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
     background: black;
     padding: 0.5em 0;
     display: block; }
+    .project .logo:hover {
+      background: #333; }
 
 #crossword-cafe .background {
   background: url("../img/crossword_background.jpg") repeat;
@@ -163,12 +169,12 @@ h1 {
     position: absolute;
     display: block;
     z-index: 1;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s; }
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
     .project-pic a:hover {
-      background: rgba(255, 255, 255, 0.3); }
+      background: rgba(255, 255, 255, 0.2); }
   .project-pic.crossword {
     background: url("../img/crossword_preview1.jpg") no-repeat;
     background-size: 100%; }
