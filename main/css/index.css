@@ -112,13 +112,15 @@ h1 {
   position: relative;
   overflow: hidden; }
   .project .logo {
+    text-align: center;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     background: black;
     padding: 0.5em 0;
-    display: block; }
+    display: block;
+    text-decoration: none; }
     .project .logo:hover {
       background: #333; }
 
@@ -162,7 +164,7 @@ h1 {
   position: relative;
   width: 600px;
   height: 369px;
-  border: 2px solid black; }
+  border: 1px solid black; }
   .project-pic a {
     width: 100%;
     height: 100%;
@@ -188,5 +190,11 @@ h1 {
   display: block;
   min-width: 900px;
   opacity: 0.4; }
+
+#meetup-heatmap .logo {
+  background: #e51837; }
+#meetup-heatmap .project-pic {
+  background: url("../img/heatmap.png") no-repeat;
+  background-size: 100%; }
 
 /*# sourceMappingURL=index.css.map */

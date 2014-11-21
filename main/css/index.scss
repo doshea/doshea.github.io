@@ -149,10 +149,12 @@ h1 {
   overflow: hidden;
 
   .logo {
+    text-align: center;
     @include all-transitions(0.3s);
     background: black;
     padding: 0.5em 0;
     display: block;
+    text-decoration: none;
     &:hover {
       background: #333;
     }
@@ -201,7 +203,7 @@ h1 {
   position: relative;
   width: 600px;
   height: 369px;
-  border: 2px solid black;
+  border: 1px solid black;
 
   a {
     width: 100%;
@@ -230,4 +232,14 @@ h1 {
   display: block;
   min-width: 900px;
   opacity: 0.4;
+}
+
+#meetup-heatmap {
+  .logo {
+    background: #e51837;
+  }
+  .project-pic {
+    background: url('../img/heatmap.png') no-repeat;
+    background-size: 100%;
+  }
 }
