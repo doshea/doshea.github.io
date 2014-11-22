@@ -19,8 +19,9 @@ header {
   box-shadow: 3px 3px 6px #333;
   background-color: #e51837;
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 0em;
+  width: 105%;
+  left: -5%;
   z-index: 10;
   padding: 0.5em 0;
 }
@@ -35,6 +36,15 @@ header {
   width: inherit;
   font-size: 1.5em;
   text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+input:focus {
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.333),0 0 6px rgba(42,155,199,.5);
+  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.333),0 0 6px rgba(42,155,199,.5);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.333),0 0 6px rgba(42,155,199,.5);
 }
 #container {
   height: 100%;
@@ -53,4 +63,27 @@ footer {
 }
 #credit {
   margin:0 1em;
+}
+#instructions {
+  margin: 6em auto 0;
+  text-align: center;
+}
+#instructions ol {
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+#instructions li{
+  display: inline-block;
+}
+#instructions h2{
+  text-align: center;
+  margin-bottom: 0;
+}
+.spinner {
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
 }

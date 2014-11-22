@@ -2,7 +2,8 @@
 @font-face {font-family: Starjhol;src: url('../fonts/Starjhol.ttf');}
 @font-face {font-family: Dylan;src: url('../fonts/Dylan.otf');}
 // Colors
-$husky-purple: #9b93ab;
+$husky-dark-purple: #39275b;
+$husky-light-purple: #9b93ab;
 $meetup-red: #e51837;
 $meetup-pink: #ff4b6a;
 
@@ -240,7 +241,7 @@ h1 {
       background: #333;
     }
   }
-  .project-pic {background-image: url('../img/crossword_preview1.jpg');}
+  .project-pic {background-image: url('../img/crossword_preview.jpg');}
   .background{
     background: url('../img/crossword_background.jpg') repeat;
     background-size: 20%;
@@ -249,9 +250,8 @@ h1 {
 }
 
 #bugs-n-drugs {
-  .logo {
-    background: $husky-purple;
-  }
+  .logo {background: $husky-dark-purple;}
+  .project-pic {background-image: url('../img/bugsndrugs.png');}
   .background {
     background: #9b93ab;    
   }
@@ -260,10 +260,15 @@ h1 {
 #meetup-heatmap {
   @include github(xword);
   .logo {
+    margin-top: 1em;
     background: $meetup-red;
+    font-family: 'Permanent Marker';
     &:hover {
       background: $meetup-pink;
     }
   }
   .project-pic {background-image: url('../img/heatmap.png');}
+  .background {
+    background: url('../img/meetup_mash.jpg') repeat;
+  }
 }

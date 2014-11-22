@@ -92,6 +92,7 @@ function mapSpinner() {
 $(document).ready(function(){
   //function that generates a new member heatmap when a group name is entered in the form field
   $('#member-search').on('submit', function(event){
+    $('#instructions').fadeOut(500, 'linear');
     mapSpinner();
     event.preventDefault();
     //gets string from form input and removes spaces from group name and replaces with dashes as they are written in queries

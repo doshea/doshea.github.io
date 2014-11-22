@@ -192,22 +192,28 @@ h1 {
   #crossword-cafe .logo:hover {
     background: #333; }
 #crossword-cafe .project-pic {
-  background-image: url("../img/crossword_preview1.jpg"); }
+  background-image: url("../img/crossword_preview.jpg"); }
 #crossword-cafe .background {
   background: url("../img/crossword_background.jpg") repeat;
   background-size: 20%;
   -webkit-filter: blur(2px); }
 
 #bugs-n-drugs .logo {
-  background: #9b93ab; }
+  background: #39275b; }
+#bugs-n-drugs .project-pic {
+  background-image: url("../img/bugsndrugs.png"); }
 #bugs-n-drugs .background {
   background: #9b93ab; }
 
 #meetup-heatmap .logo {
-  background: #e51837; }
+  margin-top: 1em;
+  background: #e51837;
+  font-family: 'Permanent Marker'; }
   #meetup-heatmap .logo:hover {
     background: #ff4b6a; }
 #meetup-heatmap .project-pic {
   background-image: url("../img/heatmap.png"); }
+#meetup-heatmap .background {
+  background: url("../img/meetup_mash.jpg") repeat; }
 
 /*# sourceMappingURL=index.css.map */
