@@ -5,12 +5,21 @@ html {
   height: 100%;
 }
 body {
-  background: #edefec;
   position: relative;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url('../img/meetup_mash.jpg');
+  background-size: 100%;
+  opacity: 0.4;
+  z-index: -1;
 }
 header {
   -moz-box-shadow: 3px 3px 6px #333;

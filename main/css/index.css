@@ -214,6 +214,7 @@ h1 {
 #meetup-heatmap .project-pic {
   background-image: url("../img/heatmap.png"); }
 #meetup-heatmap .background {
-  background: url("../img/meetup_mash.jpg") repeat; }
+  background: url("../img/meetup_mash.jpg") repeat;
+  opacity: 0.8; }
 
 /*# sourceMappingURL=index.css.map */
