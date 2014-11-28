@@ -47,7 +47,7 @@ h1 {
   overflow: hidden;
 }
 #sec-1 {
-  background: url('http://subtlepatterns.com/patterns/dark_wood.png') repeat;
+  background: url('../img/dark_wood.png') repeat;
 
   h1 {
     font-size: 5em;
@@ -253,7 +253,8 @@ h1 {
   .logo {background: $husky-dark-purple;}
   .project-pic {background-image: url('../img/bugsndrugs.png');}
   .background {
-    background: #9b93ab;    
+    background: #9b93ab;
+    background-image: url('../img/bugs.svg');
   }
 }
 
