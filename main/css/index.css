@@ -18,7 +18,7 @@ h1 {
   overflow: hidden; }
 
 #sec-1 {
-  background: url("http://subtlepatterns.com/patterns/dark_wood.png") repeat; }
+  background: url("../img/dark_wood.png") repeat; }
   #sec-1 h1 {
     font-size: 5em;
     color: white; }
@@ -112,6 +112,7 @@ h1 {
   position: relative;
   overflow: hidden; }
   .project .logo {
+    margin-top: 1em;
     text-align: center;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -154,6 +155,18 @@ h1 {
   position: absolute;
   bottom: 0.25em;
   right: 0.25em; }
+
+.github {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  bottom: 0; }
+  .github:after {
+    content: url("../img/github.png"); }
+  .github:hover {
+    opacity: 0.7; }
 
 .project-pic {
   margin: 2em 3em;
@@ -203,10 +216,10 @@ h1 {
 #bugs-n-drugs .project-pic {
   background-image: url("../img/bugsndrugs.png"); }
 #bugs-n-drugs .background {
-  background: #9b93ab; }
+  background: #9b93ab;
+  background-image: url("../img/bugs.svg"); }
 
 #meetup-heatmap .logo {
-  margin-top: 1em;
   background: #e51837;
   font-family: 'Permanent Marker'; }
   #meetup-heatmap .logo:hover {
@@ -216,5 +229,13 @@ h1 {
 #meetup-heatmap .background {
   background: url("../img/meetup_mash.jpg") repeat;
   opacity: 0.8; }
+
+#contact a {
+  margin: 0 auto; }
+#contact img {
+  width: 7em;
+  display: inline-block; }
+#contact * {
+  text-align: center; }
 
 /*# sourceMappingURL=index.css.map */

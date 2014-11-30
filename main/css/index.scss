@@ -35,10 +35,6 @@ h1 {
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
-@mixin github($project-name){
-  &::after {
-  }
-}
 
 .sec {
   height: 100%;
@@ -152,6 +148,7 @@ h1 {
   overflow: hidden;
 
   .logo {
+    margin-top: 1em;
     text-align: center;
     @include all-transitions(0.3s);
     padding: 0.5em 0;
@@ -198,6 +195,17 @@ h1 {
   right: 0.25em;
 }
 
+.github {
+  @include all-transitions(0.3s);
+  position: absolute;
+  bottom: 0;
+  &:after {
+    content: url('../img/github.png');
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
 
 .project-pic {
   margin: 2em 3em;
@@ -259,9 +267,7 @@ h1 {
 }
 
 #meetup-heatmap {
-  @include github(xword);
   .logo {
-    margin-top: 1em;
     background: $meetup-red;
     font-family: 'Permanent Marker';
     &:hover {
@@ -272,5 +278,17 @@ h1 {
   .background {
     background: url('../img/meetup_mash.jpg') repeat;
     opacity: 0.8;
+  }
+}
+#contact {
+  a {
+    margin: 0 auto;
+  }
+  img {
+    width: 7em;
+    display: inline-block;
+  }
+  * {
+    text-align: center;
   }
 }
