@@ -230,6 +230,9 @@ h1 {
   background: url("../img/meetup_mash.jpg") repeat;
   opacity: 0.8; }
 
+#screen-guide .project-pic {
+  background-image: url("../img/screen_guide_preview.png"); }
+
 #contact a {
   margin: 0 auto; }
 #contact img {
