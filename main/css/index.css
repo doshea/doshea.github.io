@@ -151,10 +151,15 @@ h1 {
     margin: 1em 1em; }
 
 .heroku .project-desc::after {
-  content: url("../img/heroku.png");
+  content: '';
   position: absolute;
   bottom: 0.25em;
-  right: 0.25em; }
+  right: 0.25em;
+  background-image: url("../img/heroku.png");
+  height: 2em;
+  width: 2em;
+  background-size: contain;
+  background-repeat: no-repeat; }
 
 .github {
   -webkit-transition: all 0.3s;
@@ -209,12 +214,13 @@ h1 {
 #crossword-cafe .background {
   background: url("../img/crossword_background.jpg") repeat;
   background-size: 20%;
-  -webkit-filter: blur(2px); }
+  -webkit-filter: blur(1px);
+  opacity: 0.2; }
 
 #bugs-n-drugs .logo {
   background: #39275b; }
 #bugs-n-drugs .project-pic {
-  background-image: url("../img/bugsndrugs.png"); }
+  background-image: url("../img/bugsndrugs_preview.png"); }
 #bugs-n-drugs .background {
   background: #9b93ab;
   background-image: url("../img/bugs.svg"); }
